@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --plyr-color-main: #3b82f6;
+  --plyr-video-background: #000;
+  --plyr-menu-background: #1f2937;
+  --plyr-menu-color: #fff;
+}
+
+@layer components {
+  .btn-primary {
+    @apply flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors;
+  }
+
+  .btn-secondary {
+    @apply flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors;
+  }
+}
+
+.plyr {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.plyr--video {
+  @apply shadow-lg;
+}
+
+.plyr__control--overlaid {
+  @apply bg-blue-600;
+}
+
+.plyr__control:hover {
+  @apply bg-blue-700;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded hover:bg-gray-500 transition-colors;
+}
+
+/* Channel list animations */
+.channel-item {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.channel-item:hover {
+  @apply transform scale-[1.02];
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
